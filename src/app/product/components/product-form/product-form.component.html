@@ -1,0 +1,27 @@
+<div class="product-form-container">
+
+    <div class="text-container">
+        <h1  class="text">Formulario producto</h1>       
+    </div>
+
+    <form class="FormGroup-container" [formGroup]="FormGroup">
+        
+        <input class="FormGroup-input" type="text"  formControlName="id" *ngIf="edit" readonly="readonly">
+        <input class="FormGroup-input" type="text"  placeholder="* Ingrese nombre del producto" formControlName="product" [class.is-invalid]="invalidFields('product')"> 
+        
+                      
+        <select class="FormGroup-select" formControlName="status_idStatus" [class.is-invalid]="invalidFields('status_idStatus')">           
+            <option class="FormGroup-select-option" *ngIf="!edit" value="">Elige un estado</option>
+            <option class="FormGroup-select-option" *ngFor="let stat of status"  value="{{stat.idStatus}}"  >
+              {{stat.status}}
+            </option>
+        </select>
+        <div class="button-container">
+            <button class="btn-form" (click)="validateForm(FormGroup.value)">{{TextButton}}</button>
+            <button  class="btn-form" (click)="delete(FormGroup.value.id)" *ngIf="edit">Eliminar</button> 
+        </div>
+              
+
+        
+    </form>
+</div>

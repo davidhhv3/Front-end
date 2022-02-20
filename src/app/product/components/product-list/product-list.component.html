@@ -1,0 +1,29 @@
+<div class="product-list-container">
+    <div class="buttons-container">
+        <button  (click)="filterN(0)" class="buttons-filter" [ngClass]="idStatus==0 ? 'active' : 'noActive'">Todos</button>
+        <button (click)="filterN(1)" class="buttons-filter" [ngClass]="idStatus==1 ? 'active' : 'noActive'">En Stock</button>
+        <button (click)="filterN(2)" class="buttons-filter" [ngClass]="idStatus==2 ? 'active' : 'noActive'">Vendidos</button>
+        <button (click)="filterN(3)" class="buttons-filter" [ngClass]="idStatus==3 ? 'active' : 'noActive'">Defectuosos</button>
+    </div>
+    <div class="product-list">
+        <div class="product-list-header">
+            <div class="product-list-header-item product-id">Id</div> 
+            <div class="product-list-header-item product-name">Nombre</div> 
+            <div class="product-list-header-item product-status">Estado</div>            
+        </div>
+        <div class="list" *ngFor="let product of products | filter : idStatus" [routerLink]="['form', product.idProduct]">
+            <div class="list-item list-id">{{product.idProduct}}</div>
+            <div class="list-item list-name">{{product.product}}</div>
+            <div class="list-item list-status">{{product.status_idStatus | statusChange}}</div>
+        </div>
+    </div> 
+    <div class="btn-add-container">
+        <button class="btn-add" [routerLink]="['form']">Agregar</button>
+    </div>
+    
+    
+    
+</div>
+
+
+

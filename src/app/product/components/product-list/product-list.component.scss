@@ -1,0 +1,114 @@
+.product-list-container{  
+    width: calc(100% - 40px);
+    padding: 0 20px;
+    font-size: 8px;
+}
+
+.buttons-container{    
+    margin-bottom: 40px;      
+    border: 1px solid rgb(187, 178, 178); 
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    .buttons-filter{
+        border-radius: 10px;
+        border: none;
+        padding: 5px 7px;
+        &:hover{
+            background-color: grey;
+            color: white;  
+            cursor: pointer;  
+        }
+    }
+}
+
+.product-list{
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;   
+    
+    
+    .product-list-header{
+        background-color: grey;
+        display: flex;
+        justify-content: space-between;
+        padding: 7px 0;
+        color: white;
+        .product-list-header-item {
+            padding: 2px;
+        }
+        .product-id{
+            width: 10%;                   
+        }
+        .product-name{           
+            width: 45%;            
+        }
+        .product-status{            
+            width: 45%;            
+        }
+    }  
+    .list{
+        display: flex;
+        justify-content: space-between;
+        &:hover{
+            background-color: lightgray;
+            color: white;  
+            cursor: pointer; 
+        }
+        .list-item{
+            border-bottom: 1px solid gray;
+            padding: 4px 2px;
+        }
+        .list-id{
+            width: 10%; 
+            border-right: 1px solid gray;           
+        }
+        .list-name{
+            width: 45%;
+            border-right: 1px solid gray;         
+        }
+        .list-status{
+            width: 45%;          
+        } 
+               
+    }
+}
+.btn-add-container{
+    margin-top: 40px;     
+    padding: 5px;
+    display: flex;
+    justify-content: flex-end;
+   
+}
+.btn-add{
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    &:hover{
+        background-color: grey;
+        color: white;  
+        cursor: pointer;  
+    }
+}
+.active{
+    background-color: grey;
+    color: white;
+    position: relative;
+    right:  0;
+}
+@media(min-width:400px){
+    .product-list-container{          
+        font-size:10px;
+    }
+}
+@media(min-width:700px){
+    .product-list-container{          
+        font-size:14px;
+    }
+}
+@media(min-width:1100px){
+    .product-list-container{          
+        font-size:23px;
+    }
+}
